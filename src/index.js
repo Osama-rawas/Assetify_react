@@ -8,7 +8,7 @@ import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter basename="/Assetify">
+  <BrowserRouter basename="/">
     <React.StrictMode>
       <Router>
         <App />
