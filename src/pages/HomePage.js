@@ -12,7 +12,8 @@ export default function HomePage() {
         <div
           className={
             window.location.href.endsWith("/") ||
-            window.location.href.endsWith("#")
+            window.location.href.endsWith("#") ||
+            window.location.href.endsWith("Assetify_react")
               ? ""
               : "overlay"
           }
