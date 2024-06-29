@@ -25,10 +25,8 @@ export default function Login() {
 
       if (res.status === 200) {
         navigate("/verifyemail");
-        console.log("done");
       }
     } catch (error) {
-      console.log(error);
       if (error.response.status === 404) {
         setErrorLogin(true);
       }
@@ -43,17 +41,14 @@ export default function Login() {
         <form onSubmit={sumbit}>
           <div>
             <div className="d-flex justify-content-end login-label">
-              <label
-                htmlFor="formGroupExampleInput"
-                className="form-label bg-white"
-              >
+              <label htmlFor="email" className="form-label bg-white">
                 الايميل
               </label>
             </div>
             <input
               type="email"
               className="form-control border-black"
-              id="formGroupExampleInput"
+              id="email"
               required
               value={email}
               onChange={(e) => {
@@ -63,17 +58,14 @@ export default function Login() {
           </div>
           <div>
             <div className="d-flex justify-content-end login-label">
-              <label
-                htmlFor="formGroupExampleInput"
-                className="form-label bg-white"
-              >
+              <label htmlFor="phonenumber" className="form-label bg-white">
                 رقم الهاتف
               </label>
             </div>
             <input
               type="text"
               className="form-control  border-black"
-              id="formGroupExampleInput"
+              id="phonenumber"
               required
               value={phone}
               onChange={(e) => {
@@ -83,17 +75,14 @@ export default function Login() {
           </div>
           <div>
             <div className="d-flex justify-content-end login-label">
-              <label
-                htmlFor="formGroupExampleInput"
-                className="form-label bg-white"
-              >
+              <label htmlFor="password" className="form-label bg-white">
                 كلمة المرور
               </label>
             </div>
             <input
               type="password"
               className="form-control  border-black"
-              id="formGroupExampleInput"
+              id="password"
               required
               value={password}
               onChange={(e) => {

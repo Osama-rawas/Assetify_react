@@ -10,7 +10,6 @@ export default function PersistLogin() {
   //   const token = cookie.set("Bearer", user.auth.token);
   const getToken = cookie.get("Bearer");
 
-  console.log(user);
   useEffect(() => {
     async function refrech() {
       try {
@@ -30,7 +29,6 @@ export default function PersistLogin() {
               return { token: data.data.token };
             });
           });
-        console.log(resp);
       } catch (err) {}
     }
     if (!user.auth.token) {

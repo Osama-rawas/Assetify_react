@@ -6,7 +6,7 @@ import Logout from "./pages/logout/Logout";
 import Signup from "./pages/signup/Signup";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import PersistLogin from "./pages/PersistLogin";
+
 import DeleteUser from "./pages/DeleteUser";
 
 export default function App() {
@@ -14,11 +14,11 @@ export default function App() {
     hidden: { x: "-100%" },
     visibale: {
       x: 0,
-      transition: { duration: 0.5 },
+      transition: { duration: 0.7 },
     },
     exit: {
       x: "100%",
-      transition: { duration: 0.5 },
+      transition: { duration: 0.7 },
     },
   };
   const location = useLocation();

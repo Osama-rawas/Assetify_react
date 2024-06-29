@@ -5,7 +5,7 @@ import "./logout.css";
 export default function Logout() {
   const cookie = new Cookies();
   const token = cookie.get("Bearer");
-  console.log(token);
+
   const navigate = useNavigate();
   function handleExit() {
     navigate("/");
@@ -16,15 +16,13 @@ export default function Logout() {
         "https://task5-toleen-falion.trainees-mad-s.com/api/auth/logout",
         { headers: { Authorization: "Bearer " + token } }
       );
-      console.log(resp);
+
       if (resp.status === 200) {
         window.location.pathname = "/Assetify_react/";
         cookie.remove("Bearer");
         window.localStorage.removeItem("email");
       }
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   }
   return (
     <div className="logout-container">

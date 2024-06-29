@@ -9,7 +9,7 @@ export default function DeleteUser() {
   const [emailTypeError, setEmailTypeError] = useState(false);
   const cookie = new Cookies();
   const token = cookie.get("Bearer");
-  console.log(token);
+
   const navigate = useNavigate();
   function handleExit() {
     navigate("/");
@@ -20,14 +20,13 @@ export default function DeleteUser() {
         "https://task5-toleen-falion.trainees-mad-s.com/api/auth/DeleteUserAccount",
         { email: email }
       );
-      // console.log(resp);
+
       if (resp.status === 200) {
         window.location.pathname = "/Assetify_react/";
         cookie.remove("Bearer");
         window.localStorage.removeItem("email");
       }
     } catch (err) {
-      console.log(err);
       if (err.response.status === 404) {
         setEmailError(true);
       }

@@ -27,9 +27,7 @@ export default function Signup() {
     setProfilePhoto(image);
     setProfilePhotoUrl(URL.createObjectURL(image));
   }
-  // console.log(profilePhoto);
-  // console.log(certificate);
-  console.log(userNow);
+
   function handleCertificate(e) {
     let image = e.target.files[0];
     setCertificate(image);
@@ -73,8 +71,6 @@ export default function Signup() {
           }
         );
 
-        console.log(res);
-
         const formDataStr = JSON.parse(res.config.data);
         window.localStorage.setItem("email", formDataStr.email);
 
@@ -83,7 +79,6 @@ export default function Signup() {
         }
       }
     } catch (err) {
-      console.log(err);
       err.response.data.errors.map((index) => {
         if (index.includes("phone")) {
           setPhoneError(true);
@@ -201,17 +196,14 @@ export default function Signup() {
                 className="signup-label label-email "
                 style={{ left: "420px" }}
               >
-                <label
-                  htmlFor="formGroupExampleInput"
-                  className="form-label bg-white "
-                >
+                <label htmlFor="email" className="form-label bg-white ">
                   الايميل
                 </label>
               </div>
               <input
                 type="email"
                 className="form-control border-black"
-                id="formGroupExampleInput"
+                id="email"
                 required
                 value={email}
                 onChange={(e) => {
@@ -227,17 +219,14 @@ export default function Signup() {
                 className="signup-label  label-username"
                 style={{ left: "350px" }}
               >
-                <label
-                  htmlFor="formGroupExampleInput"
-                  className="form-label bg-white "
-                >
+                <label htmlFor="username" className="form-label bg-white ">
                   اسم المستخدم
                 </label>
               </div>
               <input
                 type="text"
                 className="form-control  border-black "
-                id="formGroupExampleInput"
+                id="usename"
                 value={name}
                 onChange={(e) => {
                   setName(e.target.value);
@@ -249,17 +238,14 @@ export default function Signup() {
             </div>
             <div className="input-box">
               <div className="signup-label ">
-                <label
-                  htmlFor="formGroupExampleInput"
-                  className="form-label bg-white "
-                >
+                <label htmlFor="phone" className="form-label bg-white ">
                   رقم الهاتف
                 </label>
               </div>
               <input
                 type="text"
                 className="form-control  border-black"
-                id="formGroupExampleInput"
+                id="phone"
                 value={phoneNumber}
                 onChange={(e) => {
                   setPhoneNumber(e.target.value);
@@ -271,17 +257,14 @@ export default function Signup() {
             </div>
             <div className="input-box">
               <div className="signup-label ">
-                <label
-                  htmlFor="formGroupExampleInput"
-                  className="form-label bg-white  "
-                >
+                <label htmlFor="password" className="form-label bg-white  ">
                   كلمة المرور
                 </label>
               </div>
               <input
                 type="password"
                 className="form-control  border-black"
-                id="formGroupExampleInput"
+                id="password"
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);
@@ -295,17 +278,14 @@ export default function Signup() {
             </div>
             <div className="input-box">
               <div className="signup-label ">
-                <label
-                  htmlFor="formGroupExampleInput"
-                  className="form-label bg-white"
-                >
+                <label htmlFor="passwordcon" className="form-label bg-white">
                   كلمة المرور
                 </label>
               </div>
               <input
                 type="password"
                 className="form-control  border-black"
-                id="formGroupExampleInput"
+                id="passwordcon"
                 value={passwordCon}
                 onChange={(e) => {
                   setPasswordCon(e.target.value);

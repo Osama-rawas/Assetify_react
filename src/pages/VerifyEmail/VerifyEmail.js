@@ -19,7 +19,6 @@ export default function VerifyEmail() {
     inputsRef.current[0].focus();
     if (cookie.get("Bearer")) {
       cookie.remove("Bearer");
-      console.log("done");
     }
   }, []);
 
@@ -45,11 +44,8 @@ export default function VerifyEmail() {
         .get(
           "https://task5-toleen-falion.trainees-mad-s.com/api/auth/re_sentVerifyEemail"
         )
-        .then((r) => {
-          console.log(r);
-        })
+        .then((res) => {})
         .catch((err) => {
-          console.log(err);
           if (err.response.status === 429) {
             setReqError(true);
           }
@@ -135,16 +131,14 @@ export default function VerifyEmail() {
         if (resp.status === 200) {
           navigte("/");
         }
-        console.log(resp);
       } catch (err) {
-        console.log(err);
         if (err.response.status === 404) {
           setCodeError(true);
         }
       }
     }
   }
-  console.log(codeStr);
+
   return (
     <div className="d-flex justify-content-center verify-email align-items-end">
       <div
