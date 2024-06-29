@@ -1,0 +1,130 @@
+.logout-container {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px #f2f4f6;
+}
+
+.logout-container .background-image {
+  position: absolute;
+  top: 115px;
+  left: 400px;
+  width: 400px;
+  height: 350px;
+  border-radius: 8px;
+  background-image: url("../../ASSETS/imgs/analog-landscape-city-with-buildings.jpg"); /* ضع رابط الصورة هنا */
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  opacity: 90%;
+}
+.confirmation-box {
+  background-color: white;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 15px 18px 15px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 2;
+  width: 450px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 250px;
+}
+
+.confirmation-box p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.confirmation-box .btn {
+  width: 80%;
+  margin: 10px 30px;
+  margin-bottom: 10px;
+  height: 40px;
+  border-radius: 8px;
+}
+.confirmation-box .btn:hover {
+  background-color: #26edd9 !important;
+}
+.confirmation-box .btn-primary {
+  background-color: var(--color-1);
+  color: var(--color-4);
+  border: none;
+}
+
+.confirmation-box .btn-secondary {
+  background-color: #fff;
+  color: var(--color-4);
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1500px) {
+  .logout-container .background-image {
+    top: 114px !important;
+  }
+}
+@media (max-width: 1350px) {
+  .logout-container .background-image {
+    left: 300px !important;
+    width: 400px;
+  }
+}
+@media (max-width: 1200px) {
+  .logout-container .background-image {
+    width: 400px;
+  }
+}
+@media (max-width: 1150px) {
+  .logout-container .background-image {
+    left: 250px !important;
+    width: 400px;
+  }
+}
+@media (max-width: 992px) {
+  .logout-container .background-image {
+    left: 150px !important;
+    width: 400px;
+  }
+}
+@media (max-width: 800px) {
+  .logout-container .background-image {
+    left: 50px !important;
+    width: 400px;
+  }
+}
+@media (max-width: 750px) {
+  .logout-container .confirmation-box {
+    margin-left: 290px !important;
+  }
+  .logout-container .background-image {
+    left: 0px !important;
+    width: 400px;
+  }
+}
+@media (max-width: 685px) {
+  .logout-container .confirmation-box {
+    margin-left: 220px !important;
+  }
+}
+@media (max-width: 550px) {
+  .logout-container .confirmation-box {
+    margin-left: 200px !important;
+  }
+}
+@media (max-width: 475px) {
+  .logout-container .background-image {
+    width: 0 !important;
+  }
+  .logout-container .confirmation-box {
+    margin-left: 0 !important;
+  }
+  .logout-container {
+    min-height: 97vh !important;
+  }
+}

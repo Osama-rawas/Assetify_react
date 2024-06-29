@@ -1,14 +1,43 @@
+import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "./login.css";
+import Social from "../../components/Social";
 export default function Login() {
+  const navigate = useNavigate("");
   const [email, setEmail] = useState("");
-  function sumbit(e) {
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorLogin, setErrorLogin] = useState(false);
+  async function sumbit(e) {
     e.preventDefault();
+    try {
+      let res = await axios.post(
+        "https://task5-toleen-falion.trainees-mad-s.com/api/auth/login",
+        {
+          email: email,
+          phone: phone,
+          password: password,
+        }
+      );
+      const formDataStr = JSON.parse(res.config.data);
+      window.localStorage.setItem("email", formDataStr.email);
+
+      if (res.status === 200) {
+        navigate("/verifyemail");
+        console.log("done");
+      }
+    } catch (error) {
+      console.log(error);
+      if (error.response.status === 404) {
+        setErrorLogin(true);
+      }
+    }
   }
 
   return (
     <div className="container d-flex align-items-center justify-content-center log-in ">
-      <div class="background-image"></div>
+      <div className="background-image"></div>
       <div className="form-elements login-box bg-white z-3  pe-4 ps-4  mt-2">
         <h2 className="text-center blue-color mt-4 ">تسجيل الدخول</h2>
         <form onSubmit={sumbit}>
@@ -18,7 +47,27 @@ export default function Login() {
                 htmlFor="formGroupExampleInput"
                 className="form-label bg-white"
               >
-                الايميل او رقم الهاتف
+                الايميل
+              </label>
+            </div>
+            <input
+              type="email"
+              className="form-control border-black"
+              id="formGroupExampleInput"
+              required
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <div className="d-flex justify-content-end login-label">
+              <label
+                htmlFor="formGroupExampleInput"
+                className="form-label bg-white"
+              >
+                رقم الهاتف
               </label>
             </div>
             <input
@@ -26,6 +75,10 @@ export default function Login() {
               className="form-control  border-black"
               id="formGroupExampleInput"
               required
+              value={phone}
+              onChange={(e) => {
+                setPhone(e.target.value);
+              }}
             />
           </div>
           <div>
@@ -42,11 +95,21 @@ export default function Login() {
               className="form-control  border-black"
               id="formGroupExampleInput"
               required
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
           </div>
           <button className="btn login-btn text-dark col-12 mt-4" type="submit">
             تسجيل الدخول
           </button>
+          {errorLogin && (
+            <p className="error-text" dir="rtl">
+              البريد الإلكتروني أو كلمة المرور أو رقم الهاتف لا يتطابق مع
+              سجلاتنا
+            </p>
+          )}
         </form>
         <div
           dir="rtl"
@@ -65,31 +128,7 @@ export default function Login() {
           <hr className="line" />
         </div>
         <div className=" d-flex justify-content-between mb-5 mt-3 login-social">
-          <div>
-            <button className="d-flex justify-content-center align-items-center btn gap-2 rounded-4 text-black bg-white shadow-lg ps-3 pe-3">
-              <img src={require("../ASSETS/icons/Google.png")} alt="" />
-              <span className>Google</span>
-            </button>
-          </div>
-          <div>
-            <button
-              className="d-flex justify-content-center align-items-center btn gap-2 rounded-4 text-white shadow-lg ps-3 pe-3"
-              style={{ backgroundColor: "#000" }}
-            >
-              <img src={require("../ASSETS/icons/Apple.png")} alt="" />
-              <span>Apple</span>
-            </button>
-          </div>
-          <div>
-            <button
-              className="d-flex justify-content-center align-items-center btn gap-2 rounded-4 text-white shadow-lg "
-              type="submit"
-              style={{ backgroundColor: "#1877f2" }}
-            >
-              <img src={require("../ASSETS/icons/facebook.png")} alt="" />
-              <span>Facebook</span>
-            </button>
-          </div>
+          <Social />
         </div>
       </div>
     </div>

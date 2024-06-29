@@ -1,0 +1,164 @@
+.signup {
+  position: relative;
+  width: 100%;
+  height: 100% !important;
+  padding: 0 !important;
+}
+.signup .background-image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 800px;
+  height: 100%;
+  background-image: url("../../ASSETS/imgs/amazing-aerial-shot-singapore-cityscape-with-lots-skyscrapers.png"); /* ضع رابط الصورة هنا */
+  background-size: cover;
+  background-position: center;
+}
+.signup-box {
+  width: 90%;
+  background-color: #0a0e3f;
+  min-height: 100vh;
+  z-index: 3;
+  margin-left: 300px;
+}
+.signup .line {
+  width: 300px;
+  background-color: white;
+}
+.signup-inputs .form-control {
+  width: 520px;
+  border-radius: 20px;
+  font-size: 26px;
+  height: 50px;
+  margin-top: 2px;
+}
+.signup-inputs .signup-label {
+  position: relative;
+  top: 22px;
+  left: 385px;
+  width: fit-content;
+}
+.signup-inputs .signup-label label {
+  padding: 0 8px;
+}
+.input-box {
+  height: 90px;
+}
+.signup-btn {
+  border-radius: 20px !important;
+  background-color: var(--color-1) !important;
+  height: 50px;
+  font-weight: 700 !important;
+  font-size: 24px;
+  color: var(--color-4) !important;
+}
+.signup-btn:hover {
+  background-color: #26edd9 !important;
+}
+.signup-media-titel {
+  position: relative;
+  top: -30px;
+}
+.signup-media-box {
+  border: 2px dashed var(--color-3);
+  border-radius: 20px;
+  background-color: #6b48ff33;
+  padding: 0 10px !important;
+}
+.signup-media-box p {
+  margin-bottom: 12px;
+}
+.signup-social {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1150px) {
+  .signup-box-inptus {
+    flex-direction: column-reverse;
+  }
+
+  .signup-box-inptus .signup-media-box {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .signup-box-inptus .signup-inputs {
+    margin: auto;
+  }
+  .signup-btn {
+    width: 80% !important;
+    margin: auto;
+  }
+  .ask-signup {
+    margin: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .signup .background-image {
+    display: none;
+  }
+  .signup-box {
+    width: 100%;
+    margin: auto;
+  }
+}
+@media (max-width: 750px) {
+  .signup-inputs .label-email {
+    left: 420px !important;
+  }
+  .signup-inputs .label-username {
+    left: 350px !important;
+  }
+}
+@media (max-width: 685px) {
+  .signup {
+    width: 100%;
+    align-items: center !important;
+  }
+  .signup-box {
+    width: 100%;
+    margin-left: 0;
+  }
+  .signup .background-image {
+    width: 0;
+  }
+}
+@media (max-width: 550px) {
+  .signup-inputs .form-control {
+    width: 450px;
+    margin-top: 2px;
+  }
+  .signup-inputs .signup-label {
+    position: relative;
+    top: 22px;
+    left: 300px;
+    width: fit-content;
+  }
+  .signup-inputs .label-username {
+    left: 270px !important;
+  }
+  .signup-inputs .label-email {
+    left: 340px !important;
+  }
+  .signup-social {
+    gap: 10px !important;
+  }
+}
+@media (max-width: 475px) {
+  .signup-inputs .form-control {
+    width: 100% !important;
+  }
+  .signup-inputs {
+    width: 90% !important;
+  }
+  .signup-inputs .signup-label {
+    left: 250px !important;
+  }
+  .signup-inputs .label-email {
+    left: 290px !important;
+  }
+  .signup-inputs .label-username {
+    left: 195px !important;
+  }
+}

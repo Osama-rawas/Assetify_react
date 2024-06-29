@@ -1,0 +1,153 @@
+.log-in {
+  position: relative;
+  width: 85%;
+  margin-left: 220px;
+  height: 710px;
+}
+.login-box {
+  width: 575px;
+  height: 100%;
+  box-shadow: 0 2px 8px #f2f4f6;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.log-in .background-image {
+  height: 710px;
+  top: 6px;
+  left: 100px;
+  position: absolute;
+  width: 400px;
+  border-radius: 8px;
+  background-image: url("../../ASSETS/imgs/analog-landscape-city-with-buildings.jpg"); /* ضع رابط الصورة هنا */
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.login-box .line {
+  width: 230px;
+}
+
+.form-elements .login-label {
+  position: relative;
+  top: 24px;
+  padding: 0px 22px;
+  margin-top: 10px;
+}
+.login-label .form-label {
+  padding: 0 8px;
+}
+.login-box .form-control {
+  border-radius: 18px !important;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+.login-btn {
+  border-radius: 20px !important;
+  background-color: var(--color-1) !important;
+  height: 50px;
+  font-weight: bold !important;
+  margin-top: 30px;
+  color: var(--color-4);
+}
+.login-btn:hover {
+  background-color: #26edd9 !important;
+}
+.login-btn a,
+.recend-code-btn a {
+  text-decoration: none;
+}
+.login-helper a {
+  color: var(--color-2);
+}
+@media (max-width: 1350px) {
+  .log-in {
+    position: relative;
+    width: 85%;
+    margin-left: 180px;
+  }
+}
+@media (max-width: 1200px) {
+  .log-in {
+    margin-left: 160px;
+  }
+  .log-in .background-image {
+    left: 30px;
+  }
+}
+@media (max-width: 1150px) {
+  .log-in {
+    margin-left: 140px;
+  }
+  .log-in .background-image {
+    left: 30px;
+  }
+}
+@media (max-width: 992px) {
+  .log-in {
+    margin-left: 170px;
+  }
+  .log-in .background-image {
+    left: -70px;
+  }
+}
+@media (max-width: 900px) {
+  .log-in {
+    margin-left: 120px;
+  }
+
+  .log-in .background-image {
+    left: -40px;
+    width: 200px;
+  }
+}
+@media (max-width: 800px) {
+  .log-in {
+    margin-left: 160px;
+    margin: auto;
+  }
+  .log-in .background-image {
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  .log-in {
+    width: 100% !important;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .log-in .background-image {
+    width: 0 !important;
+    left: 0;
+  }
+}
+@media (max-width: 550px) {
+  .log-in {
+    margin: auto !important;
+  }
+  .login-box {
+    width: 100%;
+    margin-top: 0 !important;
+  }
+
+  .log-in .login-social {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto !important;
+    justify-content: center !important;
+  }
+  .login-social button {
+    margin: 0 auto !important;
+    width: 100%;
+  }
+}
+@media (max-width: 475px) {
+  .log-in {
+    height: 850px;
+  }
+  .login-btn {
+    margin: 30px auto !important;
+  }
+}

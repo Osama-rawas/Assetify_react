@@ -1,0 +1,147 @@
+.verify-email {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+}
+.verify-email .background-image {
+  height: 558px;
+  top: 20px;
+  left: 330px;
+  position: absolute;
+  width: 400px;
+  border-radius: 8px;
+  background-image: url("../../ASSETS/imgs/analog-landscape-city-with-buildings.jpg"); /* ضع رابط الصورة هنا */
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  opacity: 90%;
+}
+.verify-email .background-full {
+  height: 584px !important;
+  top: 0px !important;
+}
+.verify-box {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 2;
+  width: 550px;
+  box-shadow: 0 2px 8px #f2f4f6;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 250px;
+}
+.verify-input {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 34px;
+  padding: 8px;
+  border: 1px solid #acacac;
+}
+.verify-input:focus {
+  border: 1px solid #acacac;
+  /* border: none; */
+}
+
+.recend-code-btn {
+  border-radius: 20px !important;
+  background-color: transparent;
+  height: 50px;
+  font-weight: bold !important;
+  border: 1px solid var(--color-4) !important;
+  margin: 30px 45px;
+}
+.recend-code-btn a {
+  color: var(--color-4);
+}
+@media (max-width: 1500px) {
+  .verify-email .background-image {
+    /* height: 570px; */
+    top: 20px;
+    left: 330px;
+  }
+}
+@media (max-width: 1350px) {
+  .verify-email .background-image {
+    left: 250px !important;
+  }
+}
+@media (max-width: 1200px) {
+  .verify-email .background-full {
+    height: 580px !important;
+    top: 0px !important;
+  }
+  .verify-email .background-image {
+    height: 555px;
+    top: 23px;
+    left: 200px !important;
+  }
+}
+@media (max-width: 1150px) {
+  .verify-email .background-image {
+    left: 100px !important;
+    top: 25px;
+  }
+  .verify-email .background-full {
+    height: 580px !important;
+    top: 0px !important;
+  }
+}
+@media (max-width: 992px) {
+  .verify-box {
+    margin-left: 280px !important;
+  }
+  .verify-email .background-image {
+    left: 60px !important;
+  }
+}
+@media (max-width: 900px) {
+  .verify-box {
+    margin-left: 200px !important;
+  }
+  .verify-email .background-image {
+    height: 552px !important;
+    top: 26px;
+    left: 40px !important;
+  }
+  .verify-email .background-full {
+    height: 579px !important;
+    top: 0px !important;
+  }
+}
+@media (max-width: 800px) {
+  .verify-box {
+    margin-left: 100px !important;
+  }
+  .verify-email .background-image {
+    left: 40px !important;
+  }
+}
+@media (max-width: 750px) {
+  .verify-email {
+    width: 100% !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .verify-box {
+    margin: 0 auto !important;
+  }
+  .verify-email .background-image {
+    left: 0 !important;
+    width: 0 !important;
+  }
+}
+@media (max-width: 550px) {
+  .verify-box {
+    margin: 0 auto !important;
+    width: 90% !important;
+  }
+  .recend-code-btn {
+    margin: 0 auto !important;
+    margin-bottom: 50px !important;
+  }
+}
